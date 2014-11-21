@@ -144,6 +144,25 @@ img.auto-size {
     border-radius:8px;
 }
 
+.left-offset {
+    margin-left:5%;
+}
+
+.search-results {
+    background-color:rgb(202, 228, 239);
+    border-radius:8px;
+    padding-top:5px;
+    padding-left:15px;
+    padding-right:15px;
+    padding-bottom:5px;
+    text-align:center;
+}
+
+.profile-image {
+    max-width: 200px;
+    height:auto;
+    border-radius: 8px;
+}
 
 
 

@@ -72,7 +72,7 @@
                     <ul class="menu">
                         <li><a id="A2" runat="server" href="~/">Home</a></li>
                         <li><a id="A5" runat="server" href="~/">Make an Appointment</a></li>
-                        <li><a id="A6" runat="server" href="~/About">Find a Physician</a></li>
+                        <li><a id="A6" runat="server" href="~/Physician">Find a Physician</a></li>
                         <li><a id="A7" runat="server" href="~/Contact">Locate a Facility</a></li>
                         
                     </ul>
