@@ -85,7 +85,7 @@ ul#footer-menu {
     }
 
     #navbar a:hover {
-        color: grey;
+        color: lightgrey;
     }
 
 .site-title {
@@ -94,11 +94,13 @@ ul#footer-menu {
     color: #ffffff;
     */
     font-family: Rockwell, Consolas, "Courier New", Courier, monospace;
-    font-size: 2.3em;
+    font-size: 3em;
     margin: 0;
     padding-left: 30px;
     background-color: #87CEEB;
     /*background-color: rgba(135, 206, 235, 0.8); */
+
+    height: 50px;
 
     background-image: -webkit-gradient(
         linear,
@@ -116,19 +118,25 @@ ul#footer-menu {
     
     -moz-border-radius: 8px;
     border-radius: 8px;
-    border:#87CEEB 1px solid;
+    border: #87CEEB 1px solid;
 }
 
 .site-title a, .site-title a:active {
     outline: none;
     text-decoration: none;
     color: white;
+
+    text-shadow:
+    -1px -1px 0 #87CEEB/*#000*/,
+    1px -1px 0 #87CEEB,
+    -1px 1px 0 #87CEEB,
+    1px 1px 0 #87CEEB;  
 }
 
 .site-title a:hover {
     outline: none;
     text-decoration: none;
-    color: black;
+    color: lightgrey;
 }
 
 .center {
@@ -138,17 +146,20 @@ ul#footer-menu {
     margin-right:auto;
 }
 
-img.auto-size {
+/* banner pictures */
+img.auto-size { 
     max-width:100%;
     height:auto;
     border-radius:8px;
 }
 
 .left-offset {
-    margin-left:5%;
+    margin-left:0%;
 }
 
 .search-results {
+    height: auto;
+    width: auto;
     background-color:rgb(202, 228, 239);
     border-radius:8px;
     padding-top:5px;
@@ -158,9 +169,17 @@ img.auto-size {
     text-align:center;
 }
 
+    /* controls word wrap in search results */
+    .search-results p {
+        max-width:200px;
+        max-height:400px;
+    }
+
 .profile-image {
-    max-width: 200px;
-    height:auto;
+    /*max-width: 200px;*/
+    max-height: 250px;
+    width:auto;
+    
     border-radius: 8px;
 }
 

@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Physician.aspx.cs" Inherits="eHealth.Physician" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 </asp:Content>
 
@@ -23,46 +24,22 @@
 
             <asp:SqlDataSource  ID="SqlDataSource2" runat="server" 
                 ConnectionString="<%$ ConnectionStrings:DB_9B80F3_ehealthConnectionString %>" 
-                SelectCommand="SELECT Physicians.firstName, Physicians.lastName, Physicians.field, Physicians.photoUrl, Facilities.name, Facilities.address, Facilities.state, Facilities.city, Facilities.zip, Facilities.phone FROM Physicians INNER JOIN Facilities ON Physicians.fID = Facilities.fID AND Physicians.field = @field">
+                SelectCommand="SELECT Physicians.pID, Physicians.firstName, Physicians.lastName, Physicians.field, Physicians.photoUrl, Facilities.name, Facilities.address, Facilities.state, Facilities.city, Facilities.zip, Facilities.phone FROM Physicians INNER JOIN Facilities ON Physicians.fID = Facilities.fID AND Physicians.field = @field">
                 
                 <SelectParameters>
                     <asp:ControlParameter ControlID="DropDownList1" PropertyName="SelectedValue" Name="field" Type="String" />
                 </SelectParameters>
             </asp:SqlDataSource>
 
-            <div class="left-offset">
-                <!--
-                <asp:DataList ID="DataList1" runat="server" DataSourceID="SqlDataSource2">
-                    <ItemTemplate>
-                        <div class="search-results">
-                        <p>
-                        <asp:Image runat="server" ImageUrl='<%# Eval("photoUrl") %>' CssClass="profile-image" />
-                        <br />
-                        <asp:Label ID="firstNameLabel" runat="server" Text='<%# Eval("firstName") %>' />
-                        <asp:Label ID="lastNameLabel" runat="server" Text='<%# Eval("lastName") %>' />
-                        <br />
-                        <asp:Label ID="nameLabel" runat="server" Text='<%# Eval("name") %>' />
-                        <br />
-                        <asp:Label ID="addressLabel" runat="server" Text='<%# Eval("address") %>' />
-                        <br />
-                        <asp:Label ID="stateLabel" runat="server" Text='<%# Eval("state") %>' />,
-                        <asp:Label ID="cityLabel" runat="server" Text='<%# Eval("city") %>' />,
-                        <asp:Label ID="zipLabel" runat="server" Text='<%# Eval("zip") %>' />
-                        <br />
-                        <asp:Label ID="phoneLabel" runat="server" Text='<%# Eval("phone") %>' /></p>
-                        </div>
-                    </ItemTemplate>
-                </asp:DataList>
-                -->
-
-
-                <asp:DataList id="ItemsList" RepeatLayout="Table" RepeatDirection="Horizontal" RepeatColumns="3" HorizontalAlign="Center" runat="server"  DataSourceID="SqlDataSource2">
+            <div>
+                <asp:DataList id="ItemsList" RepeatDirection="Horizontal" RepeatColumns="3" HorizontalAlign="Center" runat="server"  DataSourceID="SqlDataSource2">
                 <ItemTemplate>
-                    <div class="search-results"> <p>
+                    <div class="search-results"><p>
                         <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("photoUrl") %>' CssClass="profile-image" />
                         <br />
                         <b><asp:Label ID="firstNameLabel" runat="server" Text='<%# Eval("firstName") %>' />
-                        <asp:Label ID="lastNameLabel" runat="server" Text='<%# Eval("lastName") %>' /></b>
+                        <asp:Label ID="lastNameLabel" runat="server" Text='<%# Eval("lastName") %>' />
+                         (ID: <asp:Label ID="pID" runat="server" Text='<%# Eval("pID") %>' />)</b>
                         <br />
                         <asp:Label ID="nameLabel" runat="server" Text='<%# Eval("name") %>' />
                         <br />
@@ -72,13 +49,10 @@
                         <asp:Label ID="cityLabel" runat="server" Text='<%# Eval("city") %>' />,
                         <asp:Label ID="zipLabel" runat="server" Text='<%# Eval("zip") %>' />
                         <br />
-                        <asp:Label ID="phoneLabel" runat="server" Text='<%# Eval("phone") %>' /></p>
-                        </div>
-    </ItemTemplate>
-</asp:DataList>
-                
-                
-                
+                        <asp:Label ID="phoneLabel" runat="server" Text='<%# Eval("phone") %>' />
+                        </p></div>
+                </ItemTemplate>
+                </asp:DataList>         
             </div>
         </div>
 

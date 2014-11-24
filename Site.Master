@@ -52,7 +52,7 @@
                         </AnonymousTemplate>
                         <LoggedInTemplate>
                             <p>
-                                Hello, <a id="A4" runat="server" class="username" href="~/Account/Manage" title="Manage your account">
+                                Hello, <a id="A4" runat="server" class="username" href="~/Account/Profile" title="Manage your account">
                                     <asp:LoginName ID="LoginName1" runat="server" CssClass="username" /></a>!
                                 <asp:LoginStatus ID="LoginStatus1" runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" />
                             </p>
@@ -71,10 +71,9 @@
             <div id="navbar">
                     <ul class="menu">
                         <li><a id="A2" runat="server" href="~/">Home</a></li>
-                        <li><a id="A5" runat="server" href="~/">Make an Appointment</a></li>
-                        <li><a id="A6" runat="server" href="~/Physician">Find a Physician</a></li>
+                        <li><a id="A5" runat="server" href="~/Account/Appointment">Make an Appointment</a></li>
+                        <li><a id="A6" runat="server" href="~/Account/Physician">Find a Physician</a></li>
                         <li><a id="A7" runat="server" href="~/Contact">Locate a Facility</a></li>
-                        
                     </ul>
                 </div>            
 
