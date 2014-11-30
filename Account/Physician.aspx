@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Physician.aspx.cs" Inherits="eHealth.Physician" %>
+﻿<%@ Page Title="Find a Physician" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Physician.aspx.cs" Inherits="eHealth.Physician" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 </asp:Content>
@@ -43,11 +43,11 @@
                         <br />
                         <asp:Label ID="nameLabel" runat="server" Text='<%# Eval("name") %>' />
                         <br />
-                        <asp:Label ID="addressLabel" runat="server" Text='<%# Eval("address") %>' />
+                         <a id="AL" runat="server" href='<%#Eval("address", "~/Account/Facility.aspx?dest={0}")%>'><%# Eval("address") %></a>
                         <br />
                         <asp:Label ID="stateLabel" runat="server" Text='<%# Eval("state") %>' />,
                         <asp:Label ID="cityLabel" runat="server" Text='<%# Eval("city") %>' />,
-                        <asp:Label ID="zipLabel" runat="server" Text='<%# Eval("zip") %>' />
+                        <asp:Label ID="zipLabel" runat="server"   Text='<%# Eval("zip") %>' />
                         <br />
                         <asp:Label ID="phoneLabel" runat="server" Text='<%# Eval("phone") %>' />
                         </p></div>

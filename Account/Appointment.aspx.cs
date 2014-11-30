@@ -36,13 +36,14 @@ namespace eHealth.Account
         private string formatTime(string t)
         {
             int toInt = Int32.Parse(t);
-            if (toInt > 0 && toInt < 12)
+            if (toInt >= 8 && toInt < 12)
                 return t + ":00:00 AM";
-            else if (toInt >= 12)
+            else if (toInt >= 1 && toInt <= 5)
                 return t + ":00:00 PM";
             else
                 throw new Exception("invalid input: time");
         }
+
 
         protected void Button1_Click(object sender, EventArgs e)
         {
@@ -53,7 +54,7 @@ namespace eHealth.Account
             System.Web.Security.MembershipUser user = System.Web.Security.Membership.GetUser();
             string userName = user.UserName;
             string pID = TextBox1.Text;
-            string lastName = TextBox2.Text;
+            //string lastName = TextBox2.Text;
 
             string month = DropDownList1.SelectedValue;
             string day = formatDay(TextBox3.Text);
@@ -71,7 +72,7 @@ namespace eHealth.Account
                 "values(" +
                     "'" + userName + "'," +
                     pID + "," +
-                    "(select fID from physicians where pID=" + pID + " and lastName='" + lastName + "'),'" +           
+                    "(select fID from physicians where pID=" + pID + /* " and lastName='" + lastName  + */ "),'" +           
                     inputStartDate + "','" +
                     inputEndDate + "'" +
                 ")";

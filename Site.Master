@@ -5,7 +5,7 @@
 <html lang="en">
 <head id="Head1" runat="server">
     <meta charset="utf-8" />
-    <title><%: Page.Title %> - My ASP.NET Application</title>
+    <title><%: Page.Title %> - eHealth</title>
     <asp:PlaceHolder ID="PlaceHolder1" runat="server">     
           <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>  
@@ -16,6 +16,28 @@
 </head>
 <body>
     <form id="Form1" runat="server">
+
+    <script type="text/javascript"
+       src ="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7pA5tTHSWtvaLC1-rWib2hvo15Q8qbQ0">
+    </script>
+
+    <!--
+    <script type="text/javascript">
+        function initialize() {
+            var mapOptions = {
+                center: { lat: -34.397, lng: 150.644 },
+                zoom: 8
+            };
+            var map = new google.maps.Map(document.getElementById('map-canvas'),
+                mapOptions);
+        }
+        google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+    -->
+
+
+        
+
     <asp:ScriptManager ID="ScriptManager1" runat="server">
         <Scripts>
             <%--To learn more about bundling scripts in ScriptManager see http://go.microsoft.com/fwlink/?LinkID=272931&clcid=0x409 --%>
@@ -61,21 +83,21 @@
                 </section>
                 
             </div>
-                </div>
+            </div>
 
 
-                <p class="site-title">
-                    <a id="A1" runat="server" href="~/">eHealth</a>
-                </p>
+            <p class="site-title">
+                <a id="A1" runat="server" href="~/">eHealth</a>
+            </p>
 
             <div id="navbar">
                     <ul class="menu">
                         <li><a id="A2" runat="server" href="~/">Home</a></li>
-                        <li><a id="A5" runat="server" href="~/Account/Appointment">Make an Appointment</a></li>
                         <li><a id="A6" runat="server" href="~/Account/Physician">Find a Physician</a></li>
-                        <li><a id="A7" runat="server" href="~/Contact">Locate a Facility</a></li>
+                        <li><a id="A5" runat="server" href="~/Account/Appointment">Make an Appointment</a></li>
+                        <li><a id="A7" runat="server" href="~/Account/Facility">Locate a Facility</a></li>
                     </ul>
-                </div>            
+            </div>            
 
         </div> <!-- end content-wrapper -->
     </header>
@@ -92,11 +114,16 @@
     <footer>
         <div class="content-wrapper">
             <div class="float-center" style="padding-top:10px">
-                <p>&copy; <%: DateTime.Now.Year %> - eHealth</p>
+                <p>&copy; <%: DateTime.Now.Year %> - eHealth 
+                    <a id="A3" runat="server" href="~/About">About Us</a> 
+                    <a id="A8" runat="server" href="~/Contact">Contact</a> 
+                </p>
+                <!--
                 <ul id="footer-menu">
-                    <li><a id="A3" runat="server" href="~/About">About Us</a></li>
-                    <li><a id="A8" runat="server" href="~/Contact">Contact</a></li>
+                    <li></li>
+                    <li></li>
                 </ul>
+                -->
             </div>
         </div>
     </footer>

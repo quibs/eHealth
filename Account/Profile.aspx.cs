@@ -12,8 +12,11 @@ namespace eHealth.Account
         protected void Page_Load(object sender, EventArgs e)
         {
             System.Web.Security.MembershipUser user = System.Web.Security.Membership.GetUser();
-            string userName = user.UserName;
-            Label1.Text = userName;
+            if (user != null)
+            {
+                string userName = user.UserName;
+                Label1.Text = userName;
+            }
         }
     }
 }

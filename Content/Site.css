@@ -1,6 +1,65 @@
-﻿
+﻿/* MY STUFF */
 
-/* MY STUFF */
+#address-link {
+}
+
+#map-canvas { 
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.appoint-results {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+    .appoint-results td {
+        /* border: solid 1px #c1c1c1; 
+        border-radius: 8px; */
+    }
+
+    .appoint-results tr {
+        /*background-color: white; */
+        border-radius: 8px;
+    }
+
+    /* title things */
+    .appoint-results th {
+        background-color: rgb(202, 228, 239);
+    }
+
+    .appoint-results .alt {
+        background-color: rgb(202, 228, 239);
+    }
+
+    .appoint-results .pgr {
+        background-color: aqua;
+        border-radius: 8px;
+    }
+
+    .appoint-results .pgr table {
+        margin: 3px 0;
+    }
+
+    .appoint-results .pgr td {
+        color: blue ;
+    }
+
+    .appoint-results .pgr a {
+        color: green;
+    }
+
+#profile {
+    padding-top: 30px;
+    padding-left: 10px;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+
+
+
 ul#register {
     text-align:center;
     margin-right:auto;
@@ -149,6 +208,9 @@ ul#footer-menu {
 /* banner pictures */
 img.auto-size { 
     max-width:100%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
     height:auto;
     border-radius:8px;
 }
@@ -179,7 +241,7 @@ img.auto-size {
     /*max-width: 200px;*/
     max-height: 250px;
     width:auto;
-    
+    max-width:inherit;
     border-radius: 8px;
 }
 
@@ -412,12 +474,12 @@ h5, h6 {
 
     .main-content {
         /*background: url("../Images/accent.png") no-repeat;*/
-        padding-left: 10px;
-        padding-top: 30px; /* padding between header and body */
+        padding-left: 0px;
+        padding-top: 0px; /* 30px padding between header and body */
     }
 
     .featured + .main-content {
-        background: url("../Images/heroAccent.png") no-repeat;
+        /* background: url("../Images/heroAccent.png") no-repeat; */
     }
 
 header .content-wrapper {
@@ -681,8 +743,7 @@ fieldset {
         font-size: 1.2em;
         margin: 5px 0 6px 0;
         padding: 5px;
-        width: 300px;
-    }
+        }
 
     textarea {
         font-family: inherit;
@@ -781,6 +842,7 @@ table {
     border-spacing: 0;
     margin-top: 0.75em;
     border: 0 none;
+    
 }
 
 th {
@@ -793,7 +855,6 @@ th {
     th a {
         display: block;
         position: relative;
-        
     }
 
 	th a:link, th a:visited, th a:active, th a:hover {

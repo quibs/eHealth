@@ -2,8 +2,8 @@
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
     <hgroup class="title">
-        <h1><%: Title %>.</h1>
-        <h2>Your contact page.</h2>
+        <h1><%: Title %> Us.</h1>
+        <h2></h2>
     </hgroup>
 
     <section class="contact">
@@ -11,12 +11,8 @@
             <h3>Phone:</h3>
         </header>
         <p>
-            <span class="label">Main:</span>
-            <span>425.555.0100</span>
-        </p>
-        <p>
-            <span class="label">After Hours:</span>
-            <span>425.555.0199</span>
+            <span class="label">San Jose State University:</span>
+            <span>(408) 924-1000</span>
         </p>
     </section>
 
@@ -25,16 +21,24 @@
             <h3>Email:</h3>
         </header>
         <p>
-            <span class="label">Support:</span>
-            <span><a href="mailto:Support@example.com">Support@example.com</a></span>
+            <span class="label">Qui Trinh:</span>
+            <span>qui.trinh@sjsu.edu</span>
         </p>
         <p>
-            <span class="label">Marketing:</span>
-            <span><a href="mailto:Marketing@example.com">Marketing@example.com</a></span>
+            <span class="label">Matt Reiss:</span>
+            <span>matt.reiss@sjsu.edu</span>
         </p>
         <p>
-            <span class="label">General:</span>
-            <span><a href="mailto:General@example.com">General@example.com</a></span>
+            <span class="label">Jordan Petersen:</span>
+            <span>jordan.petersen@sjsu.edu</span>
+        </p>
+        <p>
+            <span class="label">Sarmad Syed:</span>
+            <span>sarmad.syed@sjsu.edu</span>
+        </p>
+        <p>
+            <span class="label">Weider Yu:</span>
+            <span>weider.yu@sjsu.edu</span>
         </p>
     </section>
 
@@ -43,8 +47,9 @@
             <h3>Address:</h3>
         </header>
         <p>
-            One Microsoft Way<br />
-            Redmond, WA 98052-6399
+            San Jose State University<br />
+            One Washington Square<br />
+            San Jose, CA 95192
         </p>
     </section>
 </asp:Content>
