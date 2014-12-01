@@ -15,8 +15,11 @@
             <img class="auto-size" src="appointment-pic3.jpg" />
             </div>
 
+            <hgroup class="title">
+                <h1><%: Title %></h1> 
+            </hgroup>
+
             <div class ="float-left">
-                <h1>Make an Appointment</h1>
                 <p>One appointment per physician. Conflicting appointments are not allowed.</p>
             <table>
                 <tr>
@@ -25,7 +28,7 @@
                 </tr>
                 <tr>
                     <td><asp:Label ID="Label1" runat="server" Text="Physician ID"></asp:Label></td>
-                    <td style ="text-align: right"><asp:TextBox ID="TextBox1" runat="server" Width="64px"></asp:TextBox></td>
+                    <td style ="text-align: right"><asp:TextBox ID="TextBox1" runat="server" Width="128px"></asp:TextBox></td>
                 </tr>
             <!--
             <tr>
@@ -36,7 +39,7 @@
             <tr>
                 <td><asp:Label ID="Label4" runat="server" Text="Month"></asp:Label></td>
                 <td style ="text-align: right">
-                <asp:DropDownList ID="DropDownList1" runat="server">
+                <asp:DropDownList ID="DropDownList1" runat="server" Width="64px">
                     <asp:ListItem Value="01">January (01)</asp:ListItem>
                     <asp:ListItem Value="02">February (02)</asp:ListItem>
                     <asp:ListItem Value="03">March (03)</asp:ListItem>

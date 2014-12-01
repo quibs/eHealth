@@ -1,6 +1,10 @@
 ﻿/* MY STUFF */
 
-#address-link {
+
+.facility-table {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
 }
 
 #map-canvas { 
@@ -57,6 +61,7 @@
     font-weight: bold;
 }
 
+/* google custom search */
 
 
 

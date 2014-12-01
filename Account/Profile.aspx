@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Profile.aspx.cs" Inherits="eHealth.Account.Profile" %>
+﻿<%@ Page Title="My Profile" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Profile.aspx.cs" Inherits="eHealth.Account.Profile" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 </asp:Content>
@@ -15,9 +15,9 @@
                 </SelectParameters>
             </asp:SqlDataSource>
 
-
-            <h1>My Appointments</h1>
-   
+            <hgroup class="title">
+                <h1>My Appointments</h1>
+            </hgroup>
 
             <asp:Label ID="Label1" runat="server" Text="Label" Visible="False"></asp:Label>
             <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" CssClass="appoint-results" AlternatingRowStyle-CssClass="alt" PagerStyle-CssClass="pgr" >

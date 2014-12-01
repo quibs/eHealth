@@ -12,7 +12,7 @@ namespace eHealth.Account
         protected void Page_Load(object sender, EventArgs e)
         {
             var dest = Request.QueryString["dest"];
-            endvalue.Text = dest;
+            destination.Text = dest;
         }
 
         /*

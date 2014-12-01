@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Facility.aspx.cs" Inherits="eHealth.Account.Facility" %>
+﻿<%@ Page Title="Locate a Facility" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Facility.aspx.cs" Inherits="eHealth.Account.Facility" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 </asp:Content>
@@ -8,9 +8,8 @@
 
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
 
+    <!-- code from http://www.codeproject.com/Articles/291499/Google-Maps-API-V-for-ASP-NET by S V Saichandra -->
     <script type="text/javascript">
-
-
         var directionsDisplay;
         var directionsService = new google.maps.DirectionsService();
 
@@ -29,16 +28,13 @@
             directionsDisplay.setMap(map);
             directionsDisplay.setPanel(document.getElementById('directionpanel'));
 
-            var control = document.getElementById('control');
-            control.style.display = 'block';
-
-
+            var control = document.getElementById('<%= control2.ClientID %>');
+            //control.style.display = 'block';
         }
 
-
         function calcRoute() {
-            var start = document.getElementById('startvalue').value;
-            var end = document.getElementById('<%= endvalue.ClientID %>').value;
+            var start = document.getElementById('<%= source.ClientID %>').value;
+            var end = document.getElementById('<%= destination.ClientID %>').value;
             var request = {
                 origin: start,
                 destination: end,
@@ -60,42 +56,32 @@
         </script>
 
     <div class="content-wrapper">
-        <div style="padding-top: 1px">
-            <h1>Locate a Facility</h1>
-        </div>
+        <hgroup class="title">
+            <h1><%: Title %></h1>
+        </hgroup>
 
-        <table id ="control">
-        <tr>
-            <td>
-                <table>
-                    <tr>
-                        <td>From:</td>
-                        <td><input id="startvalue" type="text" style="width: 300px" value="" />
-                        </td>
-                        
-                    </tr>
-                    <tr>
-                        <td>To:</td>
-                        <td><asp:TextBox ID="endvalue" runat="server"></asp:TextBox></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td style="text-align: center"><input id="Button2" type="button" value="Get Directions" onclick="return Button1_onclick()" /></td>
-                    </tr>
-                </table>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <div id ="directionpanel"  style="height: 300px;overflow: auto" ></div>
-            </td>
-            <td>
-                <div id ="map-canvas" style="height: 400px; width: 500px"></div>
-            </td>
-        </tr>
-        </table>
-
-
-
+        <asp:Table ID="control2" runat="server" CssClass="facility-table">
+        <asp:TableRow>
+            <asp:TableCell><asp:Label ID="Label1" runat="server" Text="Starting Point: "></asp:Label></asp:TableCell>
+            <asp:TableCell><asp:TextBox ID="source" runat="server" Width="300px"></asp:TextBox></asp:TableCell>
+        </asp:TableRow>
+        <asp:TableRow>
+            <asp:TableCell><asp:Label ID="Label2" runat="server" Text="Destination: "></asp:Label></asp:TableCell>
+            <asp:TableCell><asp:TextBox ID="destination" runat="server" Width="300px"></asp:TextBox></asp:TableCell>
+        </asp:TableRow>
+            <asp:TableRow>
+                <asp:TableCell></asp:TableCell>
+                <asp:TableCell>
+                    <asp:Button ID="Button1" runat="server" Text="Get Directions" OnClientClick="Button1_onclick(); return false;" />
+                </asp:TableCell>
+            </asp:TableRow>
+        </asp:Table>
+        
+        <asp:Table runat="server">
+            <asp:TableRow>
+                <asp:TableCell><div id ="directionpanel"  style="height: 400px; width: 400px; overflow: auto" ></div></asp:TableCell>
+                <asp:TableCell><div id ="map-canvas" style="height: 400px; width: 500px"></div></asp:TableCell>
+            </asp:TableRow>
+        </asp:Table>
     </div>
 </asp:Content>

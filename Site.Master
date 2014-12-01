@@ -15,29 +15,33 @@
     <asp:ContentPlaceHolder runat="server" ID="HeadContent" />
 </head>
 <body>
+
     <form id="Form1" runat="server">
 
     <script type="text/javascript"
        src ="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7pA5tTHSWtvaLC1-rWib2hvo15Q8qbQ0">
     </script>
 
-    <!--
-    <script type="text/javascript">
-        function initialize() {
-            var mapOptions = {
-                center: { lat: -34.397, lng: 150.644 },
-                zoom: 8
-            };
-            var map = new google.maps.Map(document.getElementById('map-canvas'),
-                mapOptions);
-        }
-        google.maps.event.addDomListener(window, 'load', initialize);
+    <script src='//www.google.com/jsapi' type='text/javascript'></script>
+    <script type='text/javascript'>
+        google.load('search', '1', { language: 'en', style: google.loader.themes.V2_DEFAULT });
+        google.setOnLoadCallback(function () {
+            var customSearchOptions = {};
+            var orderByOptions = {};
+            orderByOptions['keys'] = [{ label: 'Relevance', key: '' }, { label: 'Date', key: 'date' }];
+            customSearchOptions['enableOrderBy'] = true;
+            customSearchOptions['orderByOptions'] = orderByOptions;
+            customSearchOptions['overlayResults'] = true;
+            var customSearchControl = new google.search.CustomSearchControl('010837741976283534091:p4cngr6jehs', customSearchOptions);
+            customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+            var options = new google.search.DrawOptions();
+            options.setAutoComplete(true);
+            customSearchControl.draw('cse', options);
+        }, true);
     </script>
-    -->
 
-
+ 
         
-
     <asp:ScriptManager ID="ScriptManager1" runat="server">
         <Scripts>
             <%--To learn more about bundling scripts in ScriptManager see http://go.microsoft.com/fwlink/?LinkID=272931&clcid=0x409 --%>
@@ -97,8 +101,8 @@
                         <li><a id="A5" runat="server" href="~/Account/Appointment">Make an Appointment</a></li>
                         <li><a id="A7" runat="server" href="~/Account/Facility">Locate a Facility</a></li>
                     </ul>
-            </div>            
-
+            </div>    
+            
         </div> <!-- end content-wrapper -->
     </header>
 
@@ -111,10 +115,14 @@
     </div>
 
 
+    
+
+
     <footer>
         <div class="content-wrapper">
             <div class="float-center" style="padding-top:10px">
-                <p>&copy; <%: DateTime.Now.Year %> - eHealth 
+                <div id='cse' style='width: 50%; margin-left:auto;margin-right:auto;text-align:center'>Loading</div>
+                <p style="padding-bottom: 15px">&copy; <%: DateTime.Now.Year %> - eHealth 
                     <a id="A3" runat="server" href="~/About">About Us</a> 
                     <a id="A8" runat="server" href="~/Contact">Contact</a> 
                 </p>
@@ -128,5 +136,132 @@
         </div>
     </footer>
     </form>
+
+    <style type='text/css'>
+        .gsc-control-cse {
+            font-family: Arial, sans-serif;
+            border-color: #E2E2E2;
+            background-color: #E2E2E2;
+        }
+        .gsc-control-cse .gsc-table-result {
+            font-family: Arial, sans-serif;
+        }
+        input.gsc-input, .gsc-input-box, .gsc-input-box-hover, .gsc-input-box-focus {
+            border-color: #D9D9D9;
+        }
+
+        input.gsc-input, .gsc-input-box {
+            padding-top: -10px;
+            padding-bottom: 10px;
+        }
+
+        input.gsc-search-button, input.gsc-search-button:hover, input.gsc-search-button:focus {
+            border-color: #666666;
+            background-color: #CECECE;
+            background-image: none;
+            filter: none;
+
+        }
+        .gsc-tabHeader.gsc-tabhInactive {
+            border-color: #FF9900;
+            background-color: #FFFFFF;
+        }
+        .gsc-tabHeader.gsc-tabhActive {
+            border-color: #E9E9E9;
+            background-color: #E9E9E9;
+            border-bottom-color: #FF9900
+         }
+        .gsc-tabsArea {
+            border-color: #FF9900;
+        }
+        .gsc-webResult.gsc-result, .gsc-results .gsc-imageResult {
+            border-color: #FFFFFF;
+            background-color: #FFFFFF;
+        }
+        .gsc-webResult.gsc-result:hover, .gsc-imageResult:hover {
+            border-color: #FFFFFF;
+            background-color: #FFFFFF;
+        }
+        .gs-webResult.gs-result a.gs-title:link, .gs-webResult.gs-result a.gs-title:link b, .gs-imageResult a.gs-title:link, .gs-imageResult a.gs-title:link b  {
+            color: #0000CC;
+        }
+        .gs-webResult.gs-result a.gs-title:visited, .gs-webResult.gs-result a.gs-title:visited b, .gs-imageResult a.gs-title:visited, .gs-imageResult a.gs-title:visited b {
+            color: #0000CC;
+        }
+        .gs-webResult.gs-result a.gs-title:hover, .gs-webResult.gs-result a.gs-title:hover b, .gs-imageResult a.gs-title:hover, .gs-imageResult a.gs-title:hover b {
+            color: #0000CC;
+        }
+        .gs-webResult.gs-result a.gs-title:active, .gs-webResult.gs-result a.gs-title:active b, .gs-imageResult a.gs-title:active, .gs-imageResult a.gs-title:active b {
+            color: #0000CC;
+        }
+        .gsc-cursor-page {
+            color: #0000CC;
+        }
+        a.gsc-trailing-more-results:link {
+            color: #0000CC;
+        }
+        .gs-webResult .gs-snippet, .gs-imageResult .gs-snippet, .gs-fileFormatType {
+            color: #000000;
+        }
+        .gs-webResult div.gs-visibleUrl, .gs-imageResult div.gs-visibleUrl {
+            color: #008000;
+        }
+        .gs-webResult div.gs-visibleUrl-short {
+            color: #008000;
+        }
+        .gs-webResult div.gs-visibleUrl-short  {
+            display: none;
+        }
+        .gs-webResult div.gs-visibleUrl-long {
+            display: block;
+        }
+        .gs-promotion div.gs-visibleUrl-short {
+            display: none;
+        }
+        .gs-promotion div.gs-visibleUrl-long  {
+            display: block;
+        }
+        .gsc-cursor-box {
+            border-color: #FFFFFF;
+        }
+        .gsc-results .gsc-cursor-box .gsc-cursor-page {
+            border-color: #E9E9E9;
+            background-color: #FFFFFF;
+            color: #0000CC;
+        }
+        .gsc-results .gsc-cursor-box .gsc-cursor-current-page {
+            border-color: #FF9900;
+            background-color: #FFFFFF;
+            color: #0000CC;
+        }
+        .gsc-webResult.gsc-result.gsc-promotion {
+            border-color: #336699;
+            background-color: #FFFFFF;
+        }
+        .gsc-completion-title {
+            color: #0000CC;
+        }
+        .gsc-completion-snippet {
+            color: #000000;
+        }
+        .gs-promotion a.gs-title:link,.gs-promotion a.gs-title:link *,.gs-promotion .gs-snippet a:link  {
+            color: #0000CC;
+        }
+        .gs-promotion a.gs-title:visited,.gs-promotion a.gs-title:visited *,.gs-promotion .gs-snippet a:visited {
+            color: #0000CC;
+        }
+        .gs-promotion a.gs-title:hover,.gs-promotion a.gs-title:hover *,.gs-promotion .gs-snippet a:hover  {
+            color: #0000CC;
+        }
+        .gs-promotion a.gs-title:active,.gs-promotion a.gs-title:active *,.gs-promotion .gs-snippet a:active {
+            color: #0000CC;
+        }
+        .gs-promotion .gs-snippet, .gs-promotion .gs-title .gs-promotion-title-right, .gs-promotion .gs-title .gs-promotion-title-right * {
+            color: #000000;
+        }
+        .gs-promotion .gs-visibleUrl,.gs-promotion .gs-visibleUrl-short  {
+            color: #008000;
+        }
+    </style>
 </body>
 </html>
