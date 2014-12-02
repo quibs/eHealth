@@ -1,5 +1,9 @@
 ﻿/* MY STUFF */
 
+.physician-control {
+    margin-left: auto;
+    margin-right: auto;
+}
 
 .facility-table {
     margin-left: auto;
@@ -559,7 +563,8 @@ ul.menu {
         background-image: -webkit-linear-gradient(left, #7ac0da 0%, #a4d4e6 100%);
         background-image: linear-gradient(left, #7ac0da 0%, #a4d4e6 100%);
         color: #3e5667;
-        padding: 20px 40px 30px 40px;
+        padding: 1px 1px 1px 1px;
+        border-radius: 8px;
     }
 
         .featured hgroup.title h1, .featured hgroup.title h2 {

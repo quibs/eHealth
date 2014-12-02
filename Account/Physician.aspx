@@ -64,7 +64,8 @@
                         <br />
                         <b><asp:Label ID="firstNameLabel" runat="server" Text='<%# Eval("firstName") %>' />
                         <asp:Label ID="lastNameLabel" runat="server" Text='<%# Eval("lastName") %>' />
-                         (ID: <asp:Label ID="pID" runat="server" Text='<%# Eval("pID") %>' />)</b>
+                         (ID: <a id="A1" runat="server" href='<%#Eval("pID", "~/Account/Appointment.aspx?id={0}")%>'><%# Eval("pID") %></a>)</b>
+                        
                         <br />
                         <asp:Label ID="fieldLabel" runat="server" Text='<%# Eval("field") %>' />
                         <br />

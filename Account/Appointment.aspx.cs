@@ -12,7 +12,8 @@ namespace eHealth.Account
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            var pid = Request.QueryString["id"];
+            TextBox1.Text = pid;
         }
 
         private string formatDay(string day)
@@ -38,7 +39,7 @@ namespace eHealth.Account
             int toInt = Int32.Parse(t);
             if (toInt >= 8 && toInt < 12)
                 return t + ":00:00 AM";
-            else if (toInt >= 1 && toInt <= 5)
+            else if (toInt == 12 || (toInt >= 1 && toInt <= 6))
                 return t + ":00:00 PM";
             else
                 throw new Exception("invalid input: time");
@@ -57,14 +58,27 @@ namespace eHealth.Account
             //string lastName = TextBox2.Text;
 
             string month = DropDownList1.SelectedValue;
-            string day = formatDay(TextBox3.Text);
+            string day = "";            
             string year = DropDownList2.SelectedValue;
 
             string startTime = DropDownList3.SelectedValue;
             string endTime = calcEndTime(startTime);
+            string formatStartTime = "";
+            string formatEndTime = "";
 
-            string inputStartDate = year + month + day + " " + formatTime(startTime);
-            string inputEndDate = year + month + day + " " + formatTime(endTime);
+            try
+            {
+                formatStartTime = formatTime(startTime);
+                formatEndTime = formatTime(endTime);
+                day = formatDay(TextBox3.Text);
+            }
+            catch (Exception)
+            {
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('invalid time')", true);
+            }
+
+            string inputStartDate = year + month + day + " " + formatStartTime;
+            string inputEndDate = year + month + day + " " + formatEndTime;
 
             try
             {

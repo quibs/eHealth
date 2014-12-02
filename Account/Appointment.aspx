@@ -9,9 +9,7 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
     <div class="content-wrapper">
         <div>
-
-
-            <div class="float-right">
+            <div class="float-right" style="margin-top: 30px">
             <img class="auto-size" src="appointment-pic3.jpg" />
             </div>
 
@@ -28,7 +26,7 @@
                 </tr>
                 <tr>
                     <td><asp:Label ID="Label1" runat="server" Text="Physician ID"></asp:Label></td>
-                    <td style ="text-align: right"><asp:TextBox ID="TextBox1" runat="server" Width="128px"></asp:TextBox></td>
+                    <td style ="text-align: right"><asp:TextBox ID="TextBox1" runat="server" Width="64px"></asp:TextBox></td>
                 </tr>
             <!--
             <tr>
@@ -39,7 +37,7 @@
             <tr>
                 <td><asp:Label ID="Label4" runat="server" Text="Month"></asp:Label></td>
                 <td style ="text-align: right">
-                <asp:DropDownList ID="DropDownList1" runat="server" Width="64px">
+                <asp:DropDownList ID="DropDownList1" runat="server" Width="100%">
                     <asp:ListItem Value="01">January (01)</asp:ListItem>
                     <asp:ListItem Value="02">February (02)</asp:ListItem>
                     <asp:ListItem Value="03">March (03)</asp:ListItem>
