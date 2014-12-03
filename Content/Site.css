@@ -1,11 +1,22 @@
 ﻿/* MY STUFF */
 
+.twitter-timeline {
+    height: 400px;
+    margin-top: 15px;
+}
+
 .physician-control {
     margin-left: auto;
     margin-right: auto;
 }
 
 .facility-table {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.facility-table2 {
     margin-left: auto;
     margin-right: auto;
     text-align: center;
@@ -64,10 +75,6 @@
     font-size: 1.2em;
     font-weight: bold;
 }
-
-/* google custom search */
-
-
 
 ul#register {
     text-align:center;
@@ -254,41 +261,7 @@ img.auto-size {
     border-radius: 8px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* END MY STUFF */
 
 html {
     background-color: #e2e2e2;
@@ -382,21 +355,6 @@ h5, h6 {
         text-decoration: none;
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* login
 ----------------------------------------------------------*/
 #login {
@@ -429,44 +387,6 @@ h5, h6 {
         display: inline;
         list-style: none;
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* END MY STUFF */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* main layout
 ----------------------------------------------------------*/
@@ -518,7 +438,7 @@ footer {
     outline: none;
     text-decoration: none;
 }
-    */
+*/
 
 /* menu
 ----------------------------------------------------------*/
@@ -577,6 +497,7 @@ ul.menu {
 
 /* page titles */
 hgroup.title {
+    text-align: center;
     margin-bottom: 10px;
 }
 

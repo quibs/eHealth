@@ -23,8 +23,25 @@
     </section>
 </asp:Content>
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
-    
+
     <div>
+            <div class="float-right" style="width:500px">
+            <!--
+            <a class="twitter-timeline"
+            href="https://twitter.com/SJSUEngineering" 
+            data-widget-id="539498938164711424">
+            Tweets by @SJSUEngineering
+            </a>
+                -->
+             <a class="twitter-timeline" 
+             href="https://twitter.com/HealthCareGov" 
+             data-widget-id="539876505703026688">
+                 Tweets by @HealthCareGov
+             </a>
+            </div>
+
+
+    <div class="float-left">
     <h2>Getting Started:</h2>
     <ol class="round">
         <li class="one">
@@ -41,4 +58,6 @@
         </li>
     </ol>
     </div>
+        </div>
+    
 </asp:Content>

@@ -45,7 +45,8 @@
         !function (d, s, id) {
             var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
             if (!d.getElementById(id)) {
-                js = d.createElement(s); js.id = id; js.src = p + "://platform.twitter.com/widgets.js";
+                js = d.createElement(s);
+                js.id = id; js.src = p + "://platform.twitter.com/widgets.js";
                 fjs.parentNode.insertBefore(js, fjs);
             }
         }
@@ -120,14 +121,6 @@
 
 
     <div id="body">
-
-        <div class="float-right" style="margin-top: 30px">
-            <a class="twitter-timeline"
-            href="https://twitter.com/SJSUEngineering" 
-            data-widget-id="539498938164711424">
-            Tweets by @SJSUEngineering
-            </a>
-        </div>
 
         <asp:ContentPlaceHolder runat="server" ID="FeaturedContent" />
         <section class="content-wrapper main-content clear-fix">

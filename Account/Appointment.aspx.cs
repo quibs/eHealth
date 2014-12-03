@@ -13,7 +13,8 @@ namespace eHealth.Account
         protected void Page_Load(object sender, EventArgs e)
         {
             var pid = Request.QueryString["id"];
-            TextBox1.Text = pid;
+            if (pid != null)
+                TextBox1.Text = pid;
         }
 
         private string formatDay(string day)

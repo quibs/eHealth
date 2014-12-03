@@ -9,16 +9,16 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
     <div class="content-wrapper">
         <div>
-            <div class="float-right" style="margin-top: 30px">
-            <img class="auto-size" src="appointment-pic3.jpg" />
+            <hgroup class="title">
+                <h1><%: Title %></h1>
+            </hgroup>
+            <p class="center">One appointment per physician. Conflicting appointments are not allowed.</p>
+
+            <div class="float-right">
+                <img class="auto-size" src="appointment-pic3.jpg" />
             </div>
 
-            <hgroup class="title">
-                <h1><%: Title %></h1> 
-            </hgroup>
-
-            <div class ="float-left">
-                <p>One appointment per physician. Conflicting appointments are not allowed.</p>
+            <div class="float-right" style="margin-right: 100px">
             <table>
                 <tr>
                     <td><asp:Label ID="Label2" runat="server" Text="User name" Visible="False"></asp:Label></td>
@@ -81,22 +81,13 @@
                 </asp:DropDownList>
                 </td>
             </tr>
+                <tr>
+                    <td></td>
+                    <td style="text-align:right"><asp:Button ID="Button1" runat="server" Text="Submit" OnClick="Button1_Click" PostBackUrl="~/Account/Appointment" /> </td>
+                </tr>
             </table>
-                <div class="float-center">
-                <asp:Button ID="Button1" runat="server" Text="Submit" OnClick="Button1_Click" /> 
-            </div>
 
             </div>
-               
-
-            
-
         </div>
-
-
-
     </div>
-
-
-
 </asp:Content>

@@ -16,14 +16,10 @@
     </article>
 
     <aside>
-        <h3>Aside Title</h3>
-        <p>        
-            Use this area to provide additional information.
-        </p>
+        <h3>Quick Links</h3>
         <ul>
-            <li><a runat="server" href="~/">Home</a></li>
-            <li><a runat="server" href="~/About">About</a></li>
-            <li><a runat="server" href="~/Contact">Contact</a></li>
+            <li><a runat="server" href="http://engineering.sjsu.edu/" target="_blank">Engineering @ SJSU</a></li>
+            <li><a runat="server" href="https://www.healthcare.gov/" target="_blank">HealthCare.gov</a></li>
         </ul>
     </aside>
 </asp:Content>

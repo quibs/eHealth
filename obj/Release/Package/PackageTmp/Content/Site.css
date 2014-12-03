@@ -1,10 +1,36 @@
 ﻿/* MY STUFF */
 
+.twitter-timeline {
+    height: 400px;
+    margin-top: 15px;
+}
+
+.physician-control {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.facility-table {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.facility-table2 {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+#map-canvas { 
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
 
 .appoint-results {
     margin-left: auto;
     margin-right: auto;
-    
 }
 
     .appoint-results td {
@@ -17,8 +43,8 @@
         border-radius: 8px;
     }
 
+    /* title things */
     .appoint-results th {
-        /* title things */
         background-color: rgb(202, 228, 239);
     }
 
@@ -49,9 +75,6 @@
     font-size: 1.2em;
     font-weight: bold;
 }
-
-
-
 
 ul#register {
     text-align:center;
@@ -234,45 +257,11 @@ img.auto-size {
     /*max-width: 200px;*/
     max-height: 250px;
     width:auto;
-    
+    max-width:inherit;
     border-radius: 8px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* END MY STUFF */
 
 html {
     background-color: #e2e2e2;
@@ -366,21 +355,6 @@ h5, h6 {
         text-decoration: none;
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* login
 ----------------------------------------------------------*/
 #login {
@@ -413,44 +387,6 @@ h5, h6 {
         display: inline;
         list-style: none;
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* END MY STUFF */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* main layout
 ----------------------------------------------------------*/
@@ -502,7 +438,7 @@ footer {
     outline: none;
     text-decoration: none;
 }
-    */
+*/
 
 /* menu
 ----------------------------------------------------------*/
@@ -547,7 +483,8 @@ ul.menu {
         background-image: -webkit-linear-gradient(left, #7ac0da 0%, #a4d4e6 100%);
         background-image: linear-gradient(left, #7ac0da 0%, #a4d4e6 100%);
         color: #3e5667;
-        padding: 20px 40px 30px 40px;
+        padding: 1px 1px 1px 1px;
+        border-radius: 8px;
     }
 
         .featured hgroup.title h1, .featured hgroup.title h2 {
@@ -560,6 +497,7 @@ ul.menu {
 
 /* page titles */
 hgroup.title {
+    text-align: center;
     margin-bottom: 10px;
 }
 
@@ -736,8 +674,7 @@ fieldset {
         font-size: 1.2em;
         margin: 5px 0 6px 0;
         padding: 5px;
-        width: 300px;
-    }
+        }
 
     textarea {
         font-family: inherit;

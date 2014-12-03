@@ -3,9 +3,10 @@
 
 <asp:Content ContentPlaceHolderID="MainContent" runat="server">
     <hgroup class="title">
-        <h1><%: Title %>.</h1>
+        <h1><%: Title %></h1>
     </hgroup>
 
+    <div class="center">
     <section id="passwordForm">
         <asp:PlaceHolder runat="server" ID="successMessage" Visible="false" ViewStateMode="Disabled">
             <p class="message-success"><%: SuccessMessage %></p>
@@ -60,26 +61,34 @@
                             <li>
                                 <asp:Label runat="server" ID="CurrentPasswordLabel" AssociatedControlID="CurrentPassword">Current password</asp:Label>
                                 <asp:TextBox runat="server" ID="CurrentPassword" CssClass="passwordEntry" TextMode="Password" />
+                                <li>
                                 <asp:RequiredFieldValidator runat="server" ControlToValidate="CurrentPassword"
                                     CssClass="field-validation-error" ErrorMessage="The current password field is required."
                                     ValidationGroup="ChangePassword" />
+                                </li>
                             </li>
                             <li>
                                 <asp:Label runat="server" ID="NewPasswordLabel" AssociatedControlID="NewPassword">New password</asp:Label>
                                 <asp:TextBox runat="server" ID="NewPassword" CssClass="passwordEntry" TextMode="Password" />
+                                <li>
                                 <asp:RequiredFieldValidator runat="server" ControlToValidate="NewPassword"
                                     CssClass="field-validation-error" ErrorMessage="The new password is required."
                                     ValidationGroup="ChangePassword" />
+                                </li>
                             </li>
                             <li>
                                 <asp:Label runat="server" ID="ConfirmNewPasswordLabel" AssociatedControlID="ConfirmNewPassword">Confirm new password</asp:Label>
                                 <asp:TextBox runat="server" ID="ConfirmNewPassword" CssClass="passwordEntry" TextMode="Password" />
+                                <li>
                                 <asp:RequiredFieldValidator runat="server" ControlToValidate="ConfirmNewPassword"
                                     CssClass="field-validation-error" Display="Dynamic" ErrorMessage="Confirm new password is required."
                                     ValidationGroup="ChangePassword" />
+                                </li>
+                                <li>
                                 <asp:CompareValidator runat="server" ControlToCompare="NewPassword" ControlToValidate="ConfirmNewPassword"
                                     CssClass="field-validation-error" Display="Dynamic" ErrorMessage="The new password and confirmation password do not match."
                                     ValidationGroup="ChangePassword" />
+                                </li>
                             </li>
                         </ol>
                         <asp:Button runat="server" CommandName="ChangePassword" Text="Change password" ValidationGroup="ChangePassword" />
@@ -123,4 +132,5 @@
         <h3>Add an external login</h3>
         <uc:OpenAuthProviders runat="server" ReturnUrl="~/Account/Manage" />
     </section>
+        </div>
 </asp:Content>
